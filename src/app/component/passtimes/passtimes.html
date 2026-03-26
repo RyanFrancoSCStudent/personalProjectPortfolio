@@ -1,0 +1,11 @@
+<section class="passtimes">
+  <h2>Hobbies & Passtimes</h2>
+
+  <ul>
+    <li *ngFor="let item of passtimes">{{ item }}</li>
+
+    <li *ngFor="let p of photos">
+      <img [src]="p.img" class="passtime-img">
+    </li>
+  </ul>
+</section>

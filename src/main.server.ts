@@ -1,8 +1,36 @@
-import { BootstrapContext, bootstrapApplication } from '@angular/platform-browser';
-import { App } from './app/app';
-import { config } from './app/app.config.server';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app';
+import { renderApplication, provideServerRendering } from '@angular/platform-server';
+import { appConfig } from './app/app.config';
 
-const bootstrap = (context: BootstrapContext) =>
-    bootstrapApplication(App, config, context);
+import 'zone.js/node'; 
 
-export default bootstrap;
+export default renderApplication(
+  (bootstrapContext) =>
+    bootstrapApplication(
+      AppComponent,
+      {
+        ...appConfig,
+        providers: [
+          provideServerRendering(),
+          ...(appConfig.providers ?? []),
+        ],
+      },
+      bootstrapContext
+    ),
+  {
+    document: `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Angular SSR</title>
+        </head>
+        <body>
+          <app-root></app-root>
+        </body>
+      </html>
+    `,
+    url: '/',   
+  }
+);

@@ -1,0 +1,75 @@
+
+.projects {
+  background-color:black ; 
+}
+
+
+/* ---------- BASE GRID ---------- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 20px;
+  width: 100%;
+  max-width: 1600px; /* allow bigger desktop scaling */
+  margin: auto;
+}
+
+/* ---------- DEFAULT CARD SIZE ---------- */
+.project-card {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+}
+
+/* ---------- DEFAULT IMAGE SIZE ---------- */
+.project-image {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---------- LARGE SCREENS: MAKE CARDS BIGGER ---------- */
+@media (min-width: 1400px) {
+  .project-card {
+    max-width: 550px;
+  }
+
+  .project-image {
+    max-height: 380px;
+  }
+
+  .project-grid {
+    gap: 3rem; /* more spacing on big monitors */
+  }
+}
+
+/* ---------- ULTRA-WIDE SCREENS ---------- */
+@media (min-width: 1800px) {
+  .project-card {
+    max-width: 650px;
+  }
+
+  .project-image {
+    max-height: 420px;
+  }
+
+  .project-grid {
+    max-width: 1900px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  .project-grid {
+    gap: 1.25rem;
+    padding: 10px;
+  }
+
+  .project-image {
+    max-height: 220px;
+  }
+}
+

@@ -1,0 +1,51 @@
+/* ---------------- NAVBAR base ---------------- */
+.taskbar {
+  position: sticky;
+  top: 0;
+  background-color: #000080;
+  padding: 0.5rem;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;        /* ✅ allows buttons to wrap on smaller screens */
+  gap: 0.5rem;
+}
+
+/* ---------------- NAV BUTTONS ---------------- */
+.taskbar button {
+  background-color: #d4d0c8;
+  border: 2px outset #fff;
+  padding: 0.4rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;    /* keeps text clean */
+}
+
+/* ---------------- MOBILE MODE (<600px) ---------------- */
+@media (max-width: 600px) {
+  .taskbar {
+    padding: 0.3rem;
+    gap: 0.35rem;
+  }
+
+  .taskbar button {
+    padding: 0.35rem 0.8rem;   /* smaller buttons */
+    font-size: 0.8rem;         /* smaller text */
+  }
+}
+
+/* ---------------- VERY SMALL SCREENS (<400px) ---------------- */
+@media (max-width: 400px) {
+  .taskbar {
+    justify-content: center; /* prevent overflow */
+  }
+
+  .taskbar button {
+    width: 100%;              /* stack buttons vertically */
+    max-width: 280px;
+    font-size: 0.75rem;
+  }
+}
