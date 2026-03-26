@@ -1,0 +1,23 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Linux, X64, portfolio]
+    concurrency:
+      group: ryanfranco-tech-production-deploy
+      cancel-in-progress: false
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy repo on server
+        env:
+          DEPLOY_BRANCH: main
+          RELEASES_DIR: /home/ryanfranco/personalProjectPortfolio-releases
+          CURRENT_LINK: /home/ryanfranco/personalProjectPortfolio-current
+          TARGET_DIR: /var/www/ryanfranco-tech
+        run: ./scripts/deploy-repo.sh
