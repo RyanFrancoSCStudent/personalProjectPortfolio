@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 8 52 48">
+  <rect x="6" y="8" width="52" height="48" rx="8" fill="#f7f4ec" />
+  <rect x="7.5" y="9.5" width="49" height="45" rx="7" fill="none" stroke="#444" stroke-width="2" />
+  <text
+    x="30"
+    y="35"
+    text-anchor="middle"
+    font-family="Brush Script MT, Apple Chancery, Lucida Handwriting, cursive"
+    font-size="25"
+    font-style="italic"
+    fill="#222"
+  >
+    RF
+  </text>
+</svg>

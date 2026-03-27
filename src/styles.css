@@ -1,1 +1,469 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  font-family: "Chicago", "Geneva", "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+  background: #f3efe6;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: linear-gradient(180deg, #f7f3ea 0%, #ece7db 100%);
+  color: #222;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  background: #f6f2e8;
+  border-bottom: 2px solid #444;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.apple-dot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid #444;
+  border-radius: 50%;
+  background: #d9d2c3;
+}
+
+.topbar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.topbar__nav button,
+.nav-link-button,
+.mac-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.55rem 1rem;
+  border: 2px solid #444;
+  background: #f7f4ec;
+  box-shadow: inset -2px -2px 0 #d3cbbb, inset 2px 2px 0 #ffffff, 2px 2px 0 #444;
+  color: #222;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.topbar__nav button:hover,
+.nav-link-button:hover,
+.mac-button:hover {
+  transform: translate(1px, 1px);
+  box-shadow: inset -2px -2px 0 #ddd5c8, inset 2px 2px 0 #ffffff, 1px 1px 0 #444;
+}
+
+.mac-button--inverse {
+  background: #3c3c3c;
+  color: #f8f5ee;
+  box-shadow: inset -2px -2px 0 #1d1d1d, inset 2px 2px 0 #636363, 2px 2px 0 #444;
+}
+
+.desktop {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+.desktop--projects {
+  padding-top: 2rem;
+}
+
+.desktop-panel {
+  margin-bottom: 1.75rem;
+}
+
+.mac-window {
+  border: 2px solid #444;
+  background: #fcfaf5;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.mac-window__titlebar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.55rem 0.85rem;
+  background: #efe9dc;
+  border-bottom: 2px solid #444;
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.window-controls span {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #444;
+  background: #f8f4ea;
+}
+
+.mac-window__titlebar p {
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window-lines {
+  width: 72px;
+  height: 12px;
+  border-top: 2px solid #444;
+  border-bottom: 2px solid #444;
+}
+
+.mac-window__body {
+  padding: 1.35rem;
+  background: #fcfaf5;
+}
+
+.hero-grid,
+.split-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.hero-copy h1,
+.projects-header h1,
+.window-copy h2 {
+  margin: 0 0 0.75rem;
+  line-height: 1.05;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  max-width: 12ch;
+}
+
+.hero-intro,
+.window-copy p,
+.finder-note p,
+.side-panel p,
+.contact-list p {
+  font-size: 1rem;
+  max-width: 65ch;
+}
+
+.eyebrow {
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.meta-card,
+.finder-note,
+.side-panel,
+.skill-box,
+.project-card,
+.photo-card {
+  border: 2px solid #444;
+  background: #fffdfa;
+  box-shadow: inset -2px -2px 0 #ddd5c8, inset 2px 2px 0 #ffffff;
+}
+
+.meta-card {
+  padding: 0.9rem;
+}
+
+.meta-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero-portrait-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.portrait-frame {
+  padding: 1rem;
+  border: 2px solid #444;
+  background: #efe9dc;
+}
+
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid #444;
+  filter: none;
+}
+
+.finder-note,
+.side-panel {
+  padding: 1rem;
+}
+
+.finder-note__title,
+.side-panel h3 {
+  display: block;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.check-list,
+.skill-box ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.check-list li,
+.skill-box li {
+  margin-bottom: 0.45rem;
+}
+
+.passtimes-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.passtimes-copy {
+  border: 2px solid #444;
+  background: #fffdfa;
+  padding: 1rem;
+}
+
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.photo-card {
+  margin: 0;
+  padding: 0.6rem;
+}
+
+.passtime-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid #444;
+  filter: none;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skill-box {
+  padding: 1rem;
+}
+
+.skill-box h3 {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.project-card {
+  overflow: hidden;
+}
+
+.project-card-header,
+.project-card-content {
+  padding: 1rem;
+}
+
+.project-card-header {
+  border-bottom: 2px solid #444;
+  background: #efe9dc;
+}
+
+.project-card-header h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-bottom: 2px solid #444;
+  filter: none;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.contact-list p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #444;
+}
+
+.contact-list span {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+.footer {
+  padding: 1rem 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  .hero-grid,
+  .split-layout,
+  .passtimes-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta,
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .desktop {
+    width: min(100% - 1rem, 1200px);
+    padding-top: 1rem;
+  }
+
+  .mac-window__body {
+    padding: 1rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+  }
+
+  .photo-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar__nav {
+    width: 100%;
+  }
+
+  .topbar__nav button,
+  .nav-link-button,
+  .mac-button {
+    width: 100%;
+  }
+
+  .mac-window__titlebar {
+    grid-template-columns: auto 1fr;
+  }
+
+  .window-lines {
+    display: none;
+  }
+}
