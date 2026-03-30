@@ -407,6 +407,10 @@ a {
 }
 
 @media (max-width: 960px) {
+  .topbar__nav {
+    display: none;
+  }
+
   .hero-grid,
   .split-layout,
   .passtimes-layout {
