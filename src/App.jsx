@@ -351,7 +351,7 @@ function MacWindow({ title, children }) {
 function Footer() {
   return (
     <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} Ryan Franco. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} The Franco Software Agency (FSA). All rights reserved.</p>
     </footer>
   );
 }
