@@ -130,7 +130,7 @@ function HeroWindow({ onNavigate }) {
             </div>
             <div className="meta-card">
               <span className="meta-label">Current Stage</span>
-              <strong>Second-year Sheridan College student</strong>
+              <strong>Third year Sheridan College student</strong>
             </div>
           </div>
         </div>
